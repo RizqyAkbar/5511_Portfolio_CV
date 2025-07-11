@@ -5,7 +5,7 @@ import SectionTitle from './SectionTitle.vue'
 
 const projects = ref([])
 
-const API_URL = import.meta.env.PROD ? '/api/projects' : 'http://localhost:3000/api/projects'
+const API_URL = '/api/projects'
 
 onMounted(async () => {
   try {
