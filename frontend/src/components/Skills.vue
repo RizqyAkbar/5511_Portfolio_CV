@@ -4,18 +4,10 @@
       <SectionTitle title="Keahlian & Teknologi" class="text-white" />
       <div class="skills-carousel-container">
         <div class="skills-carousel">
-          <div
-            v-for="skill in skills"
-            :key="skill.name"
-            class="skill-item"
-          >
+          <div v-for="skill in skills" :key="skill.name" class="skill-item">
             <img :src="skill.logoUrl" :alt="skill.name" class="skill-logo" />
           </div>
-          <div
-            v-for="skill in skills"
-            :key="skill.name + '-duplicate'"
-            class="skill-item"
-          >
+          <div v-for="skill in skills" :key="skill.name + '-duplicate'" class="skill-item">
             <img :src="skill.logoUrl" :alt="skill.name" class="skill-logo" />
           </div>
         </div>
@@ -25,20 +17,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import SectionTitle from './SectionTitle.vue';
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+import SectionTitle from './SectionTitle.vue'
 
-const skills = ref([]);
+const skills = ref([])
+
+const API_URL = import.meta.env.PROD ? '/api/skills' : 'http://localhost:3000/api/skills'
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/skills');
-    skills.value = response.data;
+    const response = await axios.get(API_URL)
+    skills.value = response.data
   } catch (error) {
-    console.error("Error fetching skills:", error);
+    console.error('Gagal mengambil data skill:', error)
   }
-});
+})
 </script>
 
 <style scoped>
@@ -64,7 +58,7 @@ onMounted(async () => {
 .skill-item {
   flex: 0 0 auto; /* Cegah item menyusut */
   margin-right: 3.5rem; /* Jarak antar logo */
-  
+
   width: 120px; /* Lebar penampung logo */
   height: 120px; /* Tinggi penampung logo */
   display: flex;

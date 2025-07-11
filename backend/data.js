@@ -8,7 +8,7 @@ const projects = [
   {
     title: 'Website Toko Online',
     // Menggunakan URL gambar langsung dari web
-    image: 'https://cdn.pixabay.com/photo/2016/11/29/05/45/camera-1867188_1280.jpg', // Contoh URL gambar web
+    image: 'public/web.png', // Contoh URL gambar web
     description: 'Platform e-commerce dengan fitur keranjang belanja.',
     tech: ['Vue.js', 'Laravel', 'MySQL'],
     link: '#',

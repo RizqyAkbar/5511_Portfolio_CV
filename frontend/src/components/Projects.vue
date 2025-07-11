@@ -5,12 +5,14 @@ import SectionTitle from './SectionTitle.vue'
 
 const projects = ref([])
 
+const API_URL = import.meta.env.PROD ? '/api/projects' : 'http://localhost:3000/api/projects'
+
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/projects')
+    const response = await axios.get(API_URL)
     projects.value = response.data
   } catch (error) {
-    console.error(error)
+    console.error('Gagal mengambil data proyek:', error)
   }
 })
 </script>
@@ -25,11 +27,7 @@ onMounted(async () => {
           :key="project.title"
           class="bg-white/10 dark:bg-white/5 rounded-xl shadow-lg overflow-hidden backdrop-blur-lg border border-white/20"
         >
-          <img
-            :src="project.image"
-            alt="Gambar Proyek"
-            class="w-full h-56 object-cover"
-          />
+          <img :src="project.image" alt="Gambar Proyek" class="w-full h-56 object-cover" />
           <div class="p-6">
             <h3 class="text-2xl font-bold text-white mb-2">
               {{ project.title }}

@@ -4,39 +4,29 @@ import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
 
 const educationHistory = ref([])
+const API_URL = import.meta.env.PROD ? '/api/education' : 'http://localhost:3000/api/education'
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/education')
+    const response = await axios.get(API_URL)
     educationHistory.value = response.data
   } catch (error) {
-    console.error(error)
+    console.error('Gagal mengambil data pendidikan:', error)
   }
 })
 </script>
 
 <template>
-  <section
-    id="pendidikan"
-    class="py-20"
-  >
+  <section id="pendidikan" class="py-20">
     <div class="container mx-auto px-6">
       <SectionTitle title="Riwayat Pendidikan" class="text-white" />
 
       <div class="mt-12 relative">
-        <div
-          class="relative z-10 mt-4 flex flex-wrap justify-center gap-6"
-        >
+        <div class="relative z-10 mt-4 flex flex-wrap justify-center gap-6">
           <div
             v-for="edu in educationHistory"
             :key="edu.id"
-            class="
-              relative w-72 p-6 
-              rounded-xl shadow-xl backdrop-blur-lg 
-              bg-gradient-to-r from-white/20 via-white/10 to-white/20 
-              border border-white/30 hover:bg-white/30 
-              transition-all
-            "
+            class="relative w-72 p-6 rounded-xl shadow-xl backdrop-blur-lg bg-gradient-to-r from-white/20 via-white/10 to-white/20 border border-white/30 hover:bg-white/30 transition-all"
           >
             <p class="text-sm font-semibold text-gray-200 uppercase tracking-wider">
               {{ edu.period }}
