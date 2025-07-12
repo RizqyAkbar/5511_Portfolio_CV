@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "cd frontend && npm install && npm run build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/",
+    "format": "prettier --write frontend/src/",
     "start": "node backend/index.js",
     "backend:dev": "nodemon backend/index.js"
   },
