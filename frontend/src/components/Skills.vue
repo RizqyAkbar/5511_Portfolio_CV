@@ -4,11 +4,13 @@
       <SectionTitle title="Keahlian & Teknologi" class="text-white" />
       <div class="skills-carousel-container">
         <div class="skills-carousel">
-          <div v-for="skill in skills" :key="skill.name" class="skill-item">
+          <div v-for="skill in skills" :key="skill.name" class="skill-item rounded-xl shadow-xl backdrop-blur-lg bg-gradient-to-r from-white/20 via-white/10 to-white/20 border border-white/30 overflow-hidden flex flex-col items-center justify-center">
             <img :src="skill.logoUrl" :alt="skill.name" class="skill-logo" />
+            <div class="skill-level mt-2 text-xs font-semibold text-gray-800 bg-white/60 px-2 py-1 rounded-lg shadow">{{ skill.level }}</div>
           </div>
-          <div v-for="skill in skills" :key="skill.name + '-duplicate'" class="skill-item">
+          <div v-for="skill in skills" :key="skill.name + '-duplicate'" class="skill-item rounded-xl shadow-xl backdrop-blur-lg bg-gradient-to-r from-white/20 via-white/10 to-white/20 border border-white/30 overflow-hidden flex flex-col items-center justify-center">
             <img :src="skill.logoUrl" :alt="skill.name" class="skill-logo" />
+            <div class="skill-level mt-2 text-xs font-semibold text-gray-800 bg-white/60 px-2 py-1 rounded-lg shadow">{{ skill.level }}</div>
           </div>
         </div>
       </div>
@@ -56,12 +58,12 @@ onMounted(async () => {
 
 /* Gaya untuk setiap item skill - TANPA KOTAK */
 .skill-item {
-  flex: 0 0 auto; /* Cegah item menyusut */
-  margin-right: 3.5rem; /* Jarak antar logo */
-
-  width: 120px; /* Lebar penampung logo */
-  height: 120px; /* Tinggi penampung logo */
+  flex: 0 0 auto;
+  margin-right: 3.5rem;
+  width: 120px;
+  height: 120px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 
@@ -76,11 +78,23 @@ onMounted(async () => {
 }
 
 .skill-item:hover {
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 2px 8px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 2px 8px 0 rgba(0,0,0,0.20);
   border-color: #2563eb;
   transform: translateY(-8px) scale(1.08);
   background: rgba(255,255,255,0.18);
   z-index: 2;
+}
+
+.skill-level {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: rgba(255,255,255,0.7);
+  padding: 0.15rem 0.7rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+  text-align: center;
 }
 
 /* Gaya untuk logo - Sekarang dengan ukuran tetap */
