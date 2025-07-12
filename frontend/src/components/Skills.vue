@@ -79,7 +79,7 @@ onMounted(async () => {
 
 .skill-item:hover {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 2px 8px 0 rgba(0,0,0,0.20);
-  border-color: #ffffff;
+  border-color: #666565;
   transform: translateY(-8px) scale(1.08);
   background: rgba(255,254,254,0.18);
   z-index: 2;
