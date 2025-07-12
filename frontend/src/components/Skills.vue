@@ -60,8 +60,8 @@ onMounted(async () => {
 .skill-item {
   flex: 0 0 auto;
   margin-right: 3.5rem;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,21 +86,21 @@ onMounted(async () => {
 }
 
 .skill-level {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
+  margin-top: 0.7rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #1e293b;
-  background: rgba(255,255,255,0.7);
-  padding: 0.15rem 0.7rem;
+  background: transparent;
+  padding: 0;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.08);
+  box-shadow: none;
   text-align: center;
 }
 
 /* Gaya untuk logo - Sekarang dengan ukuran tetap */
 .skill-logo {
-  width: 100px; /* Atur lebar tetap untuk logo */
-  height: 100px; /* Atur tinggi tetap untuk logo */
+  width: 110px; /* Atur lebar tetap untuk logo */
+  height: 110px; /* Atur tinggi tetap untuk logo */
   object-fit: contain; /* Memastikan logo muat tanpa terpotong, menjaga aspek rasio */
   /* Remove max-width and max-height as they are replaced by fixed width/height */
 }
