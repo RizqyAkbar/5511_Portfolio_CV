@@ -66,6 +66,7 @@ onMounted(async () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 12px;
   transition: 
     box-shadow 0.3s cubic-bezier(0.4,0,0.2,1),
     border-color 0.3s cubic-bezier(0.4,0,0.2,1),
@@ -75,11 +76,12 @@ onMounted(async () => {
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
   border: 2px solid transparent;
   background: rgba(255,255,255,0.08);
+  overflow: visible;
 }
 
 .skill-item:hover {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 2px 8px 0 rgba(0,0,0,0.20);
-  border-color: #666565;
+  border-color: #504e4eb9;
   transform: translateY(-8px) scale(1.08);
   background: rgba(255,254,254,0.18);
   z-index: 2;
@@ -101,8 +103,8 @@ onMounted(async () => {
 
 /* Gaya untuk logo - Sekarang dengan ukuran tetap */
 .skill-logo {
-  width: 120px;
-  height: 120px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
 }
 
