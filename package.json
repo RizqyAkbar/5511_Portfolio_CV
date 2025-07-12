@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build"
+  },
   "dependencies": {
-    "@vercel/postgres": "^0.10.0"
+    "@vercel/postgres": "^0.10.0",
+    "dotenv": "^17.2.0"
   }
 }
