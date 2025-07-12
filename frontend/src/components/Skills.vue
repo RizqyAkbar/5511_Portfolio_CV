@@ -46,7 +46,7 @@ onMounted(async () => {
 .skills-carousel {
   display: flex;
   white-space: nowrap; /* Pastikan item tidak melompat ke baris baru */
-  animation: scroll-left 30s linear infinite; /* Atur durasi sesuai keinginan */
+  animation: scroll-left 10s linear infinite; /* Atur durasi sesuai keinginan */
 }
 
 /* Ketika di-hover, hentikan animasi */
@@ -64,6 +64,23 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 
+    box-shadow 0.3s cubic-bezier(0.4,0,0.2,1),
+    border-color 0.3s cubic-bezier(0.4,0,0.2,1),
+    transform 0.3s cubic-bezier(0.4,0,0.2,1),
+    background 0.3s cubic-bezier(0.4,0,0.2,1);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+  border: 2px solid transparent;
+  background: rgba(255,255,255,0.08);
+}
+
+.skill-item:hover {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 2px 8px 0 rgba(0,0,0,0.15);
+  border-color: #2563eb;
+  transform: translateY(-8px) scale(1.08);
+  background: rgba(255,255,255,0.18);
+  z-index: 2;
 }
 
 /* Gaya untuk logo - Sekarang dengan ukuran tetap */

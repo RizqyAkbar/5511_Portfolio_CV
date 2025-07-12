@@ -1,8 +1,8 @@
 // backend/index.js
-require('dotenv').config();
-const express = require("express");
-const cors = require("cors");
-const { sql } = require("@vercel/postgres");
+import 'dotenv/config';
+import express from "express";
+import cors from "cors";
+import { sql } from "@vercel/postgres";
 const app = express();
 
 app.use(cors());
@@ -44,4 +44,4 @@ app.listen(PORT, () => {
   console.log(`Server backend berjalan di http://localhost:${PORT}`);
 });
 
-module.exports = app;
+export default app;
