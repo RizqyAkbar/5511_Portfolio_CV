@@ -1,20 +1,11 @@
-export default function handler(req, res) {
-  res.status(200).json([
-    {
-      id: 1,
-      title: 'Portfolio Website',
-      description: 'Website portofolio pribadi dengan Vue.js dan Tailwind CSS.',
-      tech: ['Vue.js', 'Tailwind CSS', 'Vercel'],
-      image: '/public/web.png',
-      link: 'https://portfolio-akbar.vercel.app/'
-    },
-    {
-      id: 2,
-      title: 'Website Toko Online',
-      description: 'Aplikasi manajemen tugas kuliah berbasis web.',
-      tech: ['Node.js', 'Express', 'MongoDB'],
-      image: '/public/Vue.js.png',
-      link: 'https://tugaskuliah-akbar.vercel.app/'
-    }
-  ]);
+import { sql } from '@vercel/postgres';
+
+export default async function handler(req, res) {
+  try {
+    const { rows } = await sql`SELECT * FROM projects;`;
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error('Error mengambil data projects:', error);
+    res.status(500).json({ error: "Gagal mengambil data proyek" });
+  }
 } 
