@@ -4,13 +4,13 @@
       <SectionTitle title="Keahlian & Teknologi" class="text-white" />
       <div class="skills-carousel-container">
         <div class="skills-carousel">
-          <div v-for="skill in skills" :key="skill.name" class="skill-item rounded-xl shadow-xl backdrop-blur-lg bg-gradient-to-r from-white/20 via-white/10 to-white/20 border border-white/30 overflow-hidden flex flex-col items-center justify-center">
+          <div v-for="skill in skills" :key="skill.name" class="skill-item bg-white/10 dark:bg-white/5 rounded-xl shadow-lg overflow-hidden backdrop-blur-lg border border-white/20 flex flex-col items-center justify-center">
             <img :src="skill.logoUrl" :alt="skill.name" class="skill-logo" />
-            <div class="skill-level mt-2 text-xs font-semibold text-gray-800 bg-white/60 px-2 py-1 rounded-lg shadow">{{ skill.level }}</div>
+            <div class="skill-level mt-4 font-bold uppercase text-gray-800 text-lg tracking-wider">{{ skill.level }}</div>
           </div>
-          <div v-for="skill in skills" :key="skill.name + '-duplicate'" class="skill-item rounded-xl shadow-xl backdrop-blur-lg bg-gradient-to-r from-white/20 via-white/10 to-white/20 border border-white/30 overflow-hidden flex flex-col items-center justify-center">
+          <div v-for="skill in skills" :key="skill.name + '-duplicate'" class="skill-item bg-white/10 dark:bg-white/5 rounded-xl shadow-lg overflow-hidden backdrop-blur-lg border border-white/20 flex flex-col items-center justify-center">
             <img :src="skill.logoUrl" :alt="skill.name" class="skill-logo" />
-            <div class="skill-level mt-2 text-xs font-semibold text-gray-800 bg-white/60 px-2 py-1 rounded-lg shadow">{{ skill.level }}</div>
+            <div class="skill-level mt-4 font-bold uppercase text-gray-800 text-lg tracking-wider">{{ skill.level }}</div>
           </div>
         </div>
       </div>
@@ -59,9 +59,9 @@ onMounted(async () => {
 /* Gaya untuk setiap item skill - TANPA KOTAK */
 .skill-item {
   flex: 0 0 auto;
-  margin-right: 3.5rem;
-  width: 140px;
-  height: 140px;
+  margin-right: 4.5rem;
+  width: 180px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,23 +86,24 @@ onMounted(async () => {
 }
 
 .skill-level {
-  margin-top: 0.7rem;
-  font-size: 1.05rem;
-  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: #1e293b;
   background: transparent;
   padding: 0;
   border-radius: 0.5rem;
   box-shadow: none;
   text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Gaya untuk logo - Sekarang dengan ukuran tetap */
 .skill-logo {
-  width: 110px; /* Atur lebar tetap untuk logo */
-  height: 110px; /* Atur tinggi tetap untuk logo */
-  object-fit: contain; /* Memastikan logo muat tanpa terpotong, menjaga aspek rasio */
-  /* Remove max-width and max-height as they are replaced by fixed width/height */
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
 }
 
 /* Keyframes untuk animasi scroll ke kiri */
