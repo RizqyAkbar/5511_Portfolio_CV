@@ -15,6 +15,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./frontend/src', import.meta.url))
     },
   },
+  publicDir: 'frontend/public',
   server: {
     proxy: {
       '/api': 'http://localhost:3000',
